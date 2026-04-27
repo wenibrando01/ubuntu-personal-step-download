@@ -28,3 +28,34 @@ Step 5 — After reboot, opened VirtualBox
 # Then: Settings → System → Processor
 # Check "Enable Nested VT-x/AMD-V" 
 # The checkbox is now clickable because Memory Integrity is disabled
+
+
+**creating a VM in virt-manager:**
+
+Step 1 — Open virt-manager
+bash
+
+virt-manager
+
+This opens the Virtual Machine Manager GUI window
+
+Step 2 — Create a new VM
+
+    Click the monitor + sparkle icon (top left)
+    This starts the new VM creation wizard
+
+Step 3 — Choose installation source
+
+    Select "Local install media (ISO image)"
+    Click Forward
+    We use an ISO file we downloaded instead of a physical CD/DVD
+
+Step 4 — Select your ISO file
+
+    Click Browse → Browse Local
+    Navigate to your home folder and select:
+
+  ubuntu-22.04.5-live-server-amd64.iso
+
+    This is the OS installer that will boot in the VM
+
