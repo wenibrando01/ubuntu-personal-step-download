@@ -29,6 +29,49 @@ Step 5 — After reboot, opened VirtualBox
 # Check "Enable Nested VT-x/AMD-V" 
 # The checkbox is now clickable because Memory Integrity is disabled
 
+**KVM INSTALL**
+
+Step 1: Update System
+
+    # Update and upgrade your system packages
+sudo apt update && sudo apt upgrade -y
+
+Step 2: Install KVM and All Required Packages
+
+    # Install KVM and all required packages
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager virtinst cpu-checker
+
+Step 3: Verify KVM Installation
+
+    # Check if KVM is supported by your CPU
+sudo kvm-ok
+
+Step 4: Enable and Start libvirt Service
+
+    # Enable and start the libvirt service
+sudo systemctl enable --now libvirtd
+
+    # Check if libvirtd is running
+sudo systemctl status libvirtd
+
+Step 5: Add User to KVM Groups
+
+    # Add your user to libvirt and kvm groups
+sudo usermod -aG libvirt $USER
+sudo usermod -aG kvm $USER
+
+    # Apply group changes immediately
+newgrp libvirt
+
+Step 6: Verify Everything is Working
+
+    # List all virtual machines (should return empty list)
+virsh list --all
+
+Step 7: Open Virtual Machine Manager
+
+    # Launch the Virtual Machine Manager GUI
+virt-manager
 
 **creating a VM in virt-manager:**
 
