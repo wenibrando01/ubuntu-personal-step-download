@@ -1,4 +1,4 @@
-# ubuntu-personal-step-download
+# ubuntu-step-download
 
 **Problem: Nested VT-x/AMD-V was grayed out in VirtualBox**
 Solution:
